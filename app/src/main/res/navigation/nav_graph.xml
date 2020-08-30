@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/nav_graph"
+        app:startDestination="@id/character_index">
+
+    <fragment
+            android:id="@+id/character_index"
+            android:name="io.digitalheart.breakingbad.features.characters.CharacterIndexFragment"
+            android:label=" ">
+        <action
+                android:id="@+id/action_to_character_details"
+                app:destination="@id/character_details" />
+    </fragment>
+
+    <fragment
+            android:id="@+id/character_details"
+            android:name="io.digitalheart.breakingbad.features.characters.CharacterDetailsFragment"
+            android:label=" " />
+</navigation>

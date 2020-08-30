@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion androidTargetVersion
+    defaultConfig {
+        applicationId "io.digitalheart.breakingbad"
+        minSdkVersion androidMinVersion
+        targetSdkVersion androidTargetVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    testOptions {
+        unitTests.includeAndroidResources = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+dependencies {
+    implementation "com.airbnb.android:mvrx:$mvrxVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation "androidx.recyclerview:recyclerview:$recyclerViewVersion"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
+    implementation("com.airbnb.android:epoxy:$epoxyVersion") { exclude group: 'com.android.support' }
+    kapt "com.airbnb.android:epoxy-processor:$epoxyVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofitVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+    implementation "com.squareup.moshi:moshi:$moshiVersion"
+    implementation "com.squareup.moshi:moshi-kotlin:$moshiVersion"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshiVersion"
+    implementation "org.koin:koin-android-architecture:$koinVersion"
+    implementation "org.koin:koin-android:$koinVersion"
+    implementation "android.arch.navigation:navigation-fragment-ktx:$navVersion"
+    implementation "android.arch.navigation:navigation-ui-ktx:$navVersion"
+    implementation "androidx.core:core-ktx:$ktxVersion"
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    implementation "com.jakewharton.threetenabp:threetenabp:$threetenabpBackportVersion"
+    implementation "com.github.mpkorstanje:simmetrics-core:$simmetricsVersion"
+    implementation "com.jakewharton.timber:timber:$timberVersion"
+
+    androidTestImplementation "androidx.test:runner:$testRunnerVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation "com.squareup.okhttp3:mockwebserver:$mockwebserverVersion"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion"
+    testImplementation "org.koin:koin-test:$koinVersion"
+    testImplementation "de.jodamob.android:SuperReflect:$superReflectVersion"
+    testImplementation "org.amshove.kluent:kluent-android:$kluentVersion"
+    testImplementation "org.robolectric:robolectric:$robolectricVersion"
+    testImplementation("org.threeten:threetenbp:$threetenabpVersion") {
+        exclude group: 'com.jakewharton.threetenabp', module: 'threetenabp'
+    }
+}

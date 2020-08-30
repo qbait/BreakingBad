@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_horizontal">96dp</dimen>
+    <dimen name="image_margin_horizontal">96dp</dimen>
+    <dimen name="image_height">400dp</dimen>
+    <dimen name="divider">1dp</dimen>
+</resources>

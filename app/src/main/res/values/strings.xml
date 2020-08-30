@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Breaking Bad</string>
+    <string name="summary">Breaking Bad Characters</string>
+    <string name="occupation">Occupation</string>
+    <string name="status">Status</string>
+    <string name="nickname">Nickname</string>
+    <string name="season_appearance">Season appearance</string>
+    <string name="season_prefix">S%1$d</string>
+    <string name="separator">,\u0020</string>
+</resources>

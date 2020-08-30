@@ -1,0 +1,58 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.androidMinVersion = 21
+    ext.androidTargetVersion = 29
+    ext.androidGradleVersion = '4.0.1'
+    ext.kotlinVersion = '1.3.72'
+    ext.appCompatVersion = '1.2.0'
+    ext.recyclerViewVersion = '1.2.0-alpha05'
+    ext.lifecycleVersion = '2.1.0'
+    ext.mvrxVersion = '1.2.0'
+    ext.epoxyVersion = '3.9.0'
+    ext.moshiVersion = '1.9.3'
+    ext.koinVersion = '0.9.3'
+    ext.rxAndroidVersion = '2.1.1'
+    ext.rxJavaVersion = '2.2.19'
+    ext.retrofitVersion = '2.6.1'
+    ext.okhttpVersion = '3.11.0'
+    ext.navVersion = '2.1.0'
+    ext.ktxVersion = '1.3.0'
+    ext.threetenabpBackportVersion = "1.2.3"
+    ext.glideVersion = "4.11.0"
+    ext.simmetricsVersion = "4.1.1"
+    ext.timberVersion = "4.7.1"
+    ext.constraintLayoutVersion = '1.1.3'
+
+    ext.espressoVersion = "3.3.0-rc03"
+    ext.testRunnerVersion = "1.1.2-alpha01"
+
+    ext.junitVersion = "4.13"
+    ext.mockitoKotlinVersion = "2.1.0"
+    ext.kluentVersion = "1.40"
+    ext.robolectricVersion = "4.3"
+    ext.mockwebserverVersion = "3.8.1"
+    ext.superReflectVersion = "1.0.1"
+    ext.threetenabpVersion = "1.4.2"
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$androidGradleVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
