@@ -6,6 +6,8 @@ The app is simple, but is ready to scale. It shows a modern approach to developi
 
 To see how I used to approach similar problems with Flutter, you can take a look at my other project [flutter_resume](https://github.com/qbait/flutter_resume)
 
+![](screen.gif)
+
 Libraries Used
 --------------
 * [MvRx][0] for Unidirectional Dataflow Architecture.
